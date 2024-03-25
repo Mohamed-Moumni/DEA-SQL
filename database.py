@@ -26,8 +26,15 @@ class DataBase:
                     "table_info":table,
                     "example":example
                 }
+                # print(f"Table name |{match.group(1)}|")
             else:
                 print("Table name not found.")
         return self.tables_infos
-            
+    
+    def get_related_tables_schema(self, related_tables, tables):
+        table_infos = ""
+        for table in related_tables:
+            if table in tables:
+                table_infos += f"{tables[table]['table_info']} \n\n {tables[table]['example']} + \n\n"
+        return table_infos
             

@@ -190,8 +190,4 @@ CREATE TABLE country_population (
                           "A: Let’s think step by step. The SQL query for the question 'What are the products that have been ordered by customers from countries with a population greater than 50 million?' requires data from multiple tables. We need to first filter the countries with a population greater than 50 million from the country_population table, then find the sales orders associated with these countries from the sale_order table, and finally retrieve the products ordered in these sales orders from the sale_order_line table and their names from the product_product table. This involves a nested query to filter countries based on population. Therefore, we label it as JOIN, NESTED."\
                           "This query involves a nested query (filtering countries based on population), so we label it as NESTED."\
                           "Thus the SQL query can be classified as JOIN, NESTED"\
-                          "Label: JOIN, NESTED"\
-                       "### Issues you should be concerned about:" \
-                        "\ntable info:\n{table_info}\n" \
-                        "Q: {query}" \
-                        "A: "
+                          "Label: JOIN, NESTED"

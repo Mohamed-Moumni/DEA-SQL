@@ -16,7 +16,11 @@ class TextToSQL:
         self.db = _db
 
     def get_tables_related_question(self, question: str):
+        tables:List[str] = []
         table_chain = create_extraction_chain_pydantic(
             Table, self.model, system_message=get_table_names_prompt(self.db.get_table_names(), question)
         )
-        return table_chain.invoke({"input": question})
+        chain_answer = table_chain.invoke({"input": question})
+        for i in chain_answer:
+            tables.append(i.name)
+        return tables
