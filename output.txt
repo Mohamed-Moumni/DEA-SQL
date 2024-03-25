@@ -1,0 +1,160 @@
+Question: What are the top 10 best-selling products by quantity?
+Answer: {"entities": ["top 10 best-selling products", "quantity"], "query": "The top 10 best-selling products by quantity"}
+Question: Which customers have placed the highest total value of orders?
+Answer: {"entities": ["customers", "highest total value of orders"], "query": "Which customers have placed the highest total value of orders?"}
+Question: What is the total sales revenue for the current month?
+Answer: {"entities": ["total sales revenue", "current month"], "query": "The total sales revenue for the current month"}
+Question: What is the total sales revenue for the current quarter?
+Answer: {"entities": ["total sales revenue", "current quarter"], "query": "The total sales revenue for the current quarter"}
+Question: What is the total sales revenue for the current year?
+Answer: {"entities": ["total sales revenue", "current year"], "query": "The total sales revenue for the current year"}
+Question: How many sales orders were placed in the last 7 days?
+Answer: {"entities": ["sales orders", "last 7 days"], "query": "How many sales orders were placed in the last 7 days?"}
+Question: What is the average order value for this month?
+Answer: {"entities": ["average order value", "this month"], "query": "The average order value for this month"}
+Question: What is the average order value for this quarter?
+Answer: {"entities": ["average order value", "this quarter"], "query": "The average order value for this quarter"}
+Question: What is the average order value for this year?
+Answer: {"entities": ["average order value", "this year"], "query": "The average order value for this year"}
+Question: How many sales orders were placed by each salesperson?
+Answer: {"entities": ["sales orders", "salesperson"], "query": "Number of sales orders placed by each salesperson"}
+Question: What is the total sales revenue for each product category?
+Answer: {"entities": ["total sales revenue", "product category"], "query": "The total sales revenue for each product category"}
+Question: How many units of a specific product have been sold?
+Answer: {"entities": ["units of a specific product", "sold"], "query": "How many units of a specific product have been sold?"}
+Question: Which sales orders have discounts applied?
+Answer: {"entities": ["sales orders", "discounts applied"], "query": "Which sales orders have discounts applied?"}
+Question: what is the total discount amount?
+Answer: {"entities": ["total discount amount"], "query": "What is the total discount amount?"}
+Question: What is the average time taken to convert a lead into a sales order?
+Answer: {"entities": ["average time taken to convert a lead into a sales order"], "query": "The average time taken to convert a lead into a sales order"}
+Question: Which sales orders have not been invoiced yet?
+Answer: {"entities": ["sales orders", "invoiced"], "query": "Which sales orders have not been invoiced yet?"}
+Question: How many sales orders were canceled in the last month?
+Answer: {"entities": ["sales orders", "canceled", "last month"], "query": "How many sales orders were canceled in the last month?"}
+Question: How many sales orders were canceled in the last quarter?
+Answer: {"entities": ["sales orders", "canceled", "last quarter"], "query": "How many sales orders were canceled in the last quarter?"}
+Question: How many sales orders were canceled in the last year?
+Answer: {"entities": ["sales orders", "canceled", "last year"], "query": "How many sales orders were canceled in the last year?"}
+Question: What is the distribution of sales orders by payment method credit card?
+Answer: {"entities": ["distribution of sales orders", "payment method credit card"], "query": "The distribution of sales orders by payment method credit card"}
+Question: Which sales orders have overdue payments?
+Answer: {"entities": ["sales orders", "overdue payments"], "query": "Which sales orders have overdue payments?"}
+Question: What is the average lead time between order confirmation and delivery for each product?
+Answer: {"entities": ["average lead time", "order confirmation", "delivery", "each product"], "query": "The average lead time between order confirmation and delivery for each product"}
+Question: How many sales orders were placed by new customers versus existing customers?
+Answer: {"entities": ["sales orders", "new customers", "existing customers"], "query": "How many sales orders were placed by new customers versus existing customers?"}
+Question: Which sales orders have special shipping instructions?
+Answer: {"entities": ["sales orders", "special shipping instructions"], "query": "Which sales orders have special shipping instructions?"}
+Question: What is the distribution of sales orders by geographic region?
+Answer: {"entities": ["distribution of sales orders", "geographic region"], "query": "Distribution of sales orders by geographic region"}
+Question: What is the distribution of sales orders by shipping destination?
+Answer: {"entities": ["distribution of sales orders", "sales orders", "shipping destination"], "query": "The distribution of sales orders by shipping destination"}
+Question: How many sales orders were placed by each customer segment retail?
+Answer: {"entities": ["sales orders", "customer segment retail"], "query": "Number of sales orders placed by each customer segment retail"}
+Question: How many sales orders were placed on weekends versus weekdays?
+Answer: {"entities":["sales orders","weekends","weekdays"],"query":"Number of sales orders placed on weekends versus weekdays"}
+Question: What is the average discount percentage applied to sales orders?
+Answer: {"entities": ["average discount percentage", "sales orders"], "query": "The average discount percentage applied to sales orders"}
+Question: Which sales orders have custom delivery addresses?
+Answer: {"entities": ["sales orders", "custom delivery addresses"], "query": "Which sales orders have custom delivery addresses?"}
+Question: How many sales orders were placed via the mobile app?
+Answer: {"entities": ["sales orders", "mobile app"], "query": "How many sales orders were placed via the mobile app?"}
+Question: What is the average number of products per sales order?
+Answer: {"entities": ["average number of products", "sales order"], "query": "The average number of products per sales order"}
+Question: Which sales orders have back-ordered items?
+Answer: {"entities": ["sales orders", "back-ordered items"], "query": "Which sales orders have back-ordered items?"}
+Question: How many sales orders were placed by customers in a specific age group?
+Answer: {"entities": ["sales orders", "customers", "specific age group"], "query": "How many sales orders were placed by customers in a specific age group?"}
+Question: What is the distribution of sales orders by sales channel online store?
+Answer: {"entities": ["sales orders", "sales channel online store"], "query": "The distribution of sales orders by sales channel online store"}
+Question: Which sales orders have special pricing agreements?
+Answer: {"entities": ["sales orders", "special pricing agreements"], "query": "Which sales orders have special pricing agreements?"}
+Question: How many sales orders were placed by customers referred by a specific marketing campaign?
+Answer: {"entities": ["sales orders", "customers referred by a specific marketing campaign"], "query": "How many sales orders were placed by customers referred by a specific marketing campaign?"}
+Question: What is the average lead time between order confirmation and payment receipt?
+Answer: {"entities": ["average lead time", "order confirmation", "payment receipt"], "query": "The average lead time between order confirmation and payment receipt"}
+Question: Which sales orders were generated from specific lead sources website contact form?
+Answer: {"entities": ["sales orders", "specific lead sources website contact form"], "query": "Which sales orders were generated from specific lead sources website contact form?"}
+Question: How many sales orders were placed by customers in a particular industry or sector?
+Answer: {"entities": ["sales orders", "customers", "particular industry or sector"], "query": "How many sales orders were placed by customers in a particular industry or sector?"}
+Question: What is the distribution of sales orders by shipping method standard shipping?
+Answer: {"entities": ["sales orders", "distribution", "shipping method standard shipping"], "query": "What is the distribution of sales orders by shipping method standard shipping?"}
+Question: Which sales orders have custom pricing negotiated with individual customers?
+Answer: {"entities": ["sales orders", "custom pricing", "individual customers"], "query": "Which sales orders have custom pricing negotiated with individual customers?"}
+Question: How many sales orders were placed by customers with a specific credit limit?
+Answer: {"entities": ["sales orders", "customers", "specific credit limit"], "query": "How many sales orders were placed by customers with a specific credit limit?"}
+Question: What is the average number of days it takes to convert a lead into a sales order?
+Answer: {"entities": ["average number of days", "lead", "sales order"], "query": "The average number of days it takes to convert a lead into a sales order"}
+Question: Which sales orders have attachments specifications?
+Answer: {"entities": ["sales orders", "attachments specifications"], "query": "Which sales orders have attachments specifications?"}
+Question: How many sales orders were placed during promotional periods?
+Answer: {"entities": ["sales orders", "promotional periods"], "query": "How many sales orders were placed during promotional periods?"}
+Question: What is the distribution of sales orders by referral source nline advertisement?
+Answer: {"entities": ["sales orders", "referral source", "online advertisement"], "query": "The distribution of sales orders by referral source online advertisement"}
+Question: Which sales orders were created by a specific sales team member?
+Answer: {"entities": ["sales orders", "specific sales team member"], "query": "Which sales orders were created by a specific sales team member?"}
+Question: How many sales orders were placed by customers in a particular city or region?
+Answer: {"entities": ["sales orders", "customers", "city or region"], "query": "How many sales orders were placed by customers in a particular city or region?"}
+Question: What is the average time taken to fulfill an order from confirmation to delivery?
+Answer: {"entities": ["average time taken to fulfill an order", "confirmation to delivery"], "query": "The average time taken to fulfill an order from confirmation to delivery"}
+Question: Which sales orders have been partially invoiced?
+Answer: {"entities": ["sales orders", "partially invoiced"], "query": "Which sales orders have been partially invoiced?"}
+Question: How many sales orders were placed for products with a specific attribute size?
+Answer: {"entities": ["sales orders", "products", "specific attribute size"], "query": "How many sales orders were placed for products with a specific attribute size?"}
+Question: What is the distribution of sales orders by payment terms cash on delivery?
+Answer: {"entities": ["sales orders", "payment terms cash on delivery"], "query": "The distribution of sales orders by payment terms cash on delivery"}
+Question: Which sales orders have specific tags or labels assigned to them?
+Answer: {"entities": ["sales orders", "specific tags or labels assigned"], "query": "Which sales orders have specific tags or labels assigned?"}
+Question: How many sales orders were placed by customers with a specific payment history late payments?
+Answer: {"entities": ["sales orders", "customers", "payment history late payments"], "query": "How many sales orders were placed by customers with a specific payment history late payments?"}
+Question: What is the average profit margin for sales orders within a certain product category?
+Answer: {"entities": ["average profit margin", "sales orders", "product category"], "query": "The average profit margin for sales orders within a certain product category"}
+Question: Which sales orders have been flagged for special attention or follow-up?
+Answer: {"entities": ["sales orders", "flagged for special attention or follow-up"], "query": "Which sales orders have been flagged for special attention or follow-up?"}
+Question: Which products have the highest profit margin based on sales orders?
+Answer: {"entities": ["products", "highest profit margin", "sales orders"], "query": "Which products have the highest profit margin based on sales orders?"}
+Question: How many sales orders were placed within each month of the year?
+Answer: {"entities": ["sales orders", "each month of the year"], "query": "How many sales orders were placed within each month of the year?"}
+Question: What is the total revenue generated from sales orders in the current fiscal year?
+Answer: {"entities": ["total revenue", "sales orders", "current fiscal year"], "query": "The total revenue generated from sales orders in the current fiscal year"}
+Question: Which customers have placed orders totaling more than a certain threshold amount?
+Answer: {"entities": ["customers", "orders", "totaling more than a certain threshold amount"], "query": "Which customers have placed orders totaling more than a certain threshold amount?"}
+Question: How many sales orders were placed on each day of the week?
+Answer: {"entities": ["sales orders", "each day of the week"], "query": "How many sales orders were placed on each day of the week?"}
+Question: What is the average number of line items per sales order?
+Answer: {"entities": ["average number of line items", "sales order"], "query": "The average number of line items per sales order"}
+Question: Which sales orders have the longest lead time between creation and confirmation?
+Answer: {"entities": ["sales orders", "lead time between creation and confirmation"], "query": "Which sales orders have the longest lead time between creation and confirmation?"}
+Question: How many sales orders were placed during each hour of the day?
+Answer: {"entities": ["sales orders", "each hour of the day"], "query": "How many sales orders were placed during each hour of the day?"}
+Question: What is the average discount percentage applied to sales orders for each product category?
+Answer: {"entities": ["average discount percentage", "sales orders", "product category"], "query": "The average discount percentage applied to sales orders for each product category"}
+Question: Which sales orders have special instructions in the notes field?
+Answer: {"entities": ["sales orders", "special instructions", "notes field"], "query": "Which sales orders have special instructions in the notes field?"}
+Question: How many sales orders were placed by customers in each country?
+Answer: {"entities": ["sales orders", "customers", "country"], "query": "How many sales orders were placed by customers in each country?"}
+Question: Which sales orders have not been fulfilled yet?
+Answer: {"entities": ["sales orders", "fulfilled"], "query": "Which sales orders have not been fulfilled yet?"}
+Question: what is the total outstanding quantity?
+Answer: {"entities": ["total outstanding quantity"], "query": "What is the total outstanding quantity?"}
+Question: What is the average shipping cost per sales order?
+Answer: {"entities": ["average shipping cost", "sales order"], "query": "The average shipping cost per sales order"}
+Question: Which sales orders have discounts applied?
+Answer: {"entities": ["sales orders", "discounts applied"], "query": "Which sales orders have discounts applied?"}
+Question: what is the total discount amount for each order?
+Answer: {"entities": ["total discount amount", "each order"], "query": "The total discount amount for each order"}
+Question: How many sales orders were placed by customers within a specific age range?
+Answer: {"entities": ["sales orders", "customers", "specific age range"], "query": "How many sales orders were placed by customers within a specific age range?"}
+Question: What is the total revenue generated from sales orders in each month of the year?
+Answer: {"entities": ["total revenue", "sales orders", "each month of the year"], "query": "What is the total revenue generated from sales orders in each month of the year?"}
+Question: Which sales orders have been paid in full?
+Answer: {"entities": ["sales orders", "paid in full"], "query": "Which sales orders have been paid in full?"}
+Question: which ones are partially paid?
+Answer: {"entities": ["partially paid"], "query": "Which ones are partially paid?"}
+Question: How many sales orders were placed by customers with overdue payments?
+Answer: {"entities": ["sales orders", "customers with overdue payments"], "query": "Number of sales orders placed by customers with overdue payments"}
+Question: What is the average time taken to process an order from creation to confirmation?
+Answer: {"entities": ["average time taken to process an order", "order processing time", "creation to confirmation"], "query": "The average time taken to process an order from creation to confirmation"}
+Question: Which sales orders have custom fields populated with specific values?
+Answer: {"entities": ["sales orders", "custom fields", "specific values"], "query": "Which sales orders have custom fields populated with specific values?"}
