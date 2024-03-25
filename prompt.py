@@ -63,3 +63,135 @@ output: {"entities": ["nominees", "nominees that have been nominated", "musicals
 2.Your output must be output in json format, and only this json needs to be returned. It needs to include all fields in json.
 The json format is as follows: {"entities":[entities], "query":"Rewritten question, removing unnecessary content"}\n
 """
+
+
+QUESTION_LABEL_MULTI = "For the given question that requires writing SQL, classify it with two labels. " \
+                       "You can choose the first label from NON-JOIN and JOIN and choose the second label from " \
+                       "NON-NESTED and NESTED.\n\n" \
+                        "### Some table infos and examples\n" \
+                          "Q: What are the products that are sold this month?" \
+                          """table_info: CREATE TABLE sale_order_line (
+  id INTEGER PRIMARY KEY,
+  product_id INTEGER NOT NULL,
+  product_uom_qty DECIMAL NOT NULL,
+  order_id INTEGER NOT NULL,
+  date_order DATE NOT NULL
+);
+
+CREATE TABLE product_product (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(255) NOT NULL
+);
+""" \
+                          "A: Let’s think step by step. The SQL query for the question 'What are the products that are sold this month?' requires data from the sale_order_line table, specifically columns product_id and product_uom_qty, and it also requires data from the product_product table, specifically the name column. Since we need information from two different tables, we need to join them using the common field product_id in sale_order_line and id in product_product, so we label it as JOIN."\
+                          "This query retrieves data based on a single condition (sold this month), without requiring nested queries with (INTERSECT, UNION, EXCEPT, IN, NOT IN), so we label it as NON-NESTED."\
+                          "Thus the SQL query can be classified as JOIN, NON-NESTED" \
+                          "Label: JOIN, NON-NESTED" \
+                            "Q: What are the total sales and revenue for each product category?" \
+"""CREATE TABLE sale_order_line (
+  id INTEGER PRIMARY KEY,
+  product_id INTEGER NOT NULL,
+  product_uom_qty DECIMAL NOT NULL,
+  price_unit DECIMAL NOT NULL,
+  date_order DATE NOT NULL
+);
+
+CREATE TABLE product_category (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE product_product (
+  id INTEGER PRIMARY KEY,
+  category_id INTEGER NOT NULL,
+  name VARCHAR(255) NOT NULL
+);
+""" \
+                          "A: Let’s think step by step. The SQL query for the question 'What are the total sales and revenue for each product category?' requires data from the sale_order_line table, specifically columns product_id, product_uom_qty, and price_unit, and it also requires data from the product_product table, specifically the category_id column. Since we need information from two different tables, we need to join them using the common field product_id in sale_order_line and id in product_product. Additionally, we need to group the data by the category_id to calculate total sales and revenue for each product category. So, we label it as JOIN." \
+                          "This query retrieves data based on aggregation (total sales and revenue) for each category, without requiring nested queries with (INTERSECT, UNION, EXCEPT, IN, NOT IN), so we label it as NON-NESTED."\
+                          "Thus the SQL query can be classified as JOIN, NON-NESTED"\
+                          "Label: JOIN, NON-NESTED"\
+                          "Q: What are the total sales and revenue for each product category?" \
+"""table_info: CREATE TABLE sale_order_line (
+  id INTEGER PRIMARY KEY,
+  product_id INTEGER NOT NULL,
+  product_uom_qty DECIMAL NOT NULL,
+  price_unit DECIMAL NOT NULL,
+  date_order DATE NOT NULL
+);
+
+CREATE TABLE product_category (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE product_product (
+  id INTEGER PRIMARY KEY,
+  category_id INTEGER NOT NULL,
+  name VARCHAR(255) NOT NULL
+);
+""" \
+                          "A: Let’s think step by step. The SQL query for the question 'What are the total sales and revenue for each product category?' requires data from the sale_order_line table, specifically columns product_id, product_uom_qty, and price_unit, and it also requires data from the product_product table, specifically the category_id column. Since we need information from two different tables, we need to join them using the common field product_id in sale_order_line and id in product_product. Additionally, we need to group the data by the category_id to calculate total sales and revenue for each product category. So, we label it as JOIN."\
+                          "This query retrieves data based on aggregation (total sales and revenue) for each category, without requiring nested queries with (INTERSECT, UNION, EXCEPT, IN, NOT IN), so we label it as NON-NESTED."\
+                          "Thus the SQL query can be classified as JOIN, NON-NESTED"\
+                           "Label: JOIN, NON-NESTED"\
+                        "Q: What are the top-selling products in terms of quantity and revenue for the last month?" \
+"""table_info: CREATE TABLE sale_order_line (
+  id INTEGER PRIMARY KEY,
+  product_id INTEGER NOT NULL,
+  product_uom_qty DECIMAL NOT NULL,
+  price_unit DECIMAL NOT NULL,
+  date_order DATE NOT NULL
+);
+
+CREATE TABLE product_product (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(255) NOT NULL
+);
+""" \
+                          "A: Let’s think step by step. The SQL query for the question 'What are the top-selling products in terms of quantity and revenue for the last month?' requires data from the sale_order_line table, specifically columns product_id, product_uom_qty, and price_unit, and it also requires data from the product_product table, specifically the name column. Since we need information from two different tables, we need to join them using the common field product_id in sale_order_line and id in product_product. Additionally, we need to filter the data based on the date_order column to consider only the last month's sales. So, we label it as JOIN."\
+                          "This query retrieves data based on aggregation (top-selling products) for the last month, without requiring nested queries with (INTERSECT, UNION, EXCEPT, IN, NOT IN), so we label it as NON-NESTED."\
+                          "Thus the SQL query can be classified as JOIN, NON-NESTED"\
+                          "Label: JOIN, NON-NESTED"\
+                            "Q: What are the total sales for each salesperson?" \
+"""table_info: CREATE TABLE sale_order (
+  id INTEGER PRIMARY KEY,
+  user_id INTEGER NOT NULL,
+  amount_total DECIMAL NOT NULL
+);
+""" \
+                          "A: Let’s think step by step. The SQL query for the question 'What are the total sales for each salesperson?' requires data from the sale_order table, specifically columns user_id and amount_total. Since we need to calculate the total sales for each salesperson, we need to group the data by the user_id column. So, we don’t need a joint condition, and we label it as NON-JOIN."\
+                          "This query retrieves data based on aggregation (total sales) for each salesperson, without requiring nested queries with (INTERSECT, UNION, EXCEPT, IN, NOT IN), so we label it as NON-NESTED."\
+                          "Thus the SQL query can be classified as NON-JOIN, NON-NESTED"\
+                          "Label: NON-JOIN, NON-NESTED"\
+                        "Q: What are the products that have been ordered by customers from countries with a population greater than 50 million?" \
+"""table_info: CREATE TABLE product_product (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE sale_order_line (
+  id INTEGER PRIMARY KEY,
+  product_id INTEGER NOT NULL,
+  order_id INTEGER NOT NULL
+);
+
+CREATE TABLE sale_order (
+  id INTEGER PRIMARY KEY,
+  country_id INTEGER NOT NULL
+);
+
+CREATE TABLE country_population (
+  id INTEGER PRIMARY KEY,
+  country_id INTEGER NOT NULL,
+  population INTEGER NOT NULL
+);
+""" \
+                          "A: Let’s think step by step. The SQL query for the question 'What are the products that have been ordered by customers from countries with a population greater than 50 million?' requires data from multiple tables. We need to first filter the countries with a population greater than 50 million from the country_population table, then find the sales orders associated with these countries from the sale_order table, and finally retrieve the products ordered in these sales orders from the sale_order_line table and their names from the product_product table. This involves a nested query to filter countries based on population. Therefore, we label it as JOIN, NESTED."\
+                          "This query involves a nested query (filtering countries based on population), so we label it as NESTED."\
+                          "Thus the SQL query can be classified as JOIN, NESTED"\
+                          "Label: JOIN, NESTED"\
+                       "### Issues you should be concerned about:" \
+                        "\ntable info:\n{table_info}\n" \
+                        "Q: {query}" \
+                        "A: "
