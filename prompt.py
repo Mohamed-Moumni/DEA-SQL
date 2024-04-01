@@ -253,7 +253,7 @@ def get_easy_class_prompt(table_info, query, few_shots):
   ### Query: {query}
   ### specification
   1.In sql, just select columns that are explicitly requested in the query.
-  2.The output format must strictly meet the given json specification: "sql": "SELECT * FROM res_user;"
+  2.The output format must strictly meet the following: "SELECT * FROM res_user;"
   """
   return prompt
 
@@ -269,7 +269,7 @@ def get_join_class_prompt(table_info, query, few_shots):
   ### specification
     1."LIMIT" just is used when explicitly requesting how much to retrieve in the query.
     2.In sql, just select columns that are explicitly requested in the query.
-    3.The output format must strictly meet the given json specification: "sql": "SELECT * FROM res_user;"
+    3.The output format must strictly meet the following: "SELECT * FROM res_user;"
   """
   return prompt
 
@@ -288,6 +288,6 @@ def get_join_nested_class_prompt(table_info, query, few_shots):
     2.Don’t use "IN", "OR", "LEFT JOIN" in sql because they aren’t supported in execution engine, you can
     use "INTERSECT" or "EXCEPT" instead.
     3.In sql, just select columns that are explicitly requested in the query.
-    4.The output format must strictly meet the given json specification: "sql": "SELECT * FROM res_user;"
+    4.The output format must strictly meet the following: "SELECT * FROM res_user;"
   """
   return prompt

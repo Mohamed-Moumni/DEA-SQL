@@ -82,6 +82,6 @@ if __name__ == "__main__":
                 res[1],
                 related_tables,
             )
-            data_save.write(f"Question: {prompt} --- sql_response: {sql_response}\n")
+            data_save.write(f"{sql_response}\n")
         time.sleep(20)
         # print(f"Response: {response}")
