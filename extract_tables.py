@@ -7,4 +7,3 @@ class Table(BaseModel):
     """SQL Table in the Database"""
 
     name: str = Field(description="Name of table in SQL database.")
-

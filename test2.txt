@@ -1,0 +1,49 @@
+Question: What are the top 10 best-selling products by quantity? --- Label:  NON-JOIN, NON-NESTED
+Question: Which customers have placed the highest total value of orders? --- Label:  JOIN, NON-NESTED
+Question: What is the total sales revenue for the current month? --- Label:  NON-JOIN, NON-NESTED
+Question: What is the total sales revenue for the current quarter? --- Label:  NON-JOIN, NON-NESTED
+Question: What is the total sales revenue for the current year? --- Label:  NON-JOIN, NON-NESTED
+Question: How many sales orders were placed in the last 7 days? --- Label:  NON-JOIN, NON-NESTED
+Question: What is the average order value for this month? --- Label:  NON-JOIN, NON-NESTED
+Question: What is the average order value for this quarter? --- Label:  NON-JOIN, NON-NESTED
+Question: What is the average order value for this year? --- Label:  NON-JOIN, NON-NESTED
+Question: How many sales orders were placed by each salesperson? --- Label:  JOIN, NON-NESTED
+Question: What is the total sales revenue for each product category? --- Label:  JOIN, NON-NESTED
+Question: How many units of a specific product have been sold? --- Label:  NON-JOIN, NON-NESTED
+Question: Which sales orders have discounts applied? --- Label:  JOIN, NON-NESTED
+Question: what is the total discount amount? --- Label:  NON-JOIN, NON-NESTED
+Question: What is the average time taken to convert a lead into a sales order? --- Label:  JOIN, NON-NESTED
+Question: Which sales orders have not been invoiced yet? --- Label:  JOIN, NESTED
+Question: How many sales orders were canceled in the last month? --- Label:  NON-JOIN, NON-NESTED
+Question: How many sales orders were canceled in the last quarter? --- Label:  JOIN, NON-NESTED
+Question: How many sales orders were canceled in the last year? --- Label:  JOIN, NON-NESTED
+Question: What is the distribution of sales orders by payment method credit card? --- Label:  JOIN, NON-NESTED
+Question: Which sales orders have overdue payments? --- Label:  JOIN, NESTED
+Question: What is the average lead time between order confirmation and delivery for each product? --- Label:  JOIN, NON-NESTED
+Question: How many sales orders were placed by new customers versus existing customers? --- Label:  JOIN, NON-NESTED
+Question: Which sales orders have special shipping instructions? --- Label:  JOIN, NON-NESTED
+Question: What is the distribution of sales orders by geographic region? --- Label:  JOIN, NON-NESTED
+Question: What is the distribution of sales orders by shipping destination? --- Label:  JOIN, NON-NESTED
+Question: How many sales orders were placed by each customer segment retail? --- Label:  JOIN, NON-NESTED
+Question: How many sales orders were placed on weekends versus weekdays? --- Label:  NON-JOIN, NON-NESTED
+Question: What is the average discount percentage applied to sales orders? --- Label:  NON-JOIN, NON-NESTED
+Question: Which sales orders have custom delivery addresses? --- Label:  JOIN, NESTED
+Question: How many sales orders were placed via the mobile app? --- Label:  NON-JOIN, NON-NESTED
+Question: Which sales orders have back-ordered items? --- Label:  JOIN, NESTED
+Question: How many sales orders were placed by customers in a specific age group? --- Label:  JOIN, NON-NESTED
+Question: What is the distribution of sales orders by sales channel online store? --- Label:  NON-JOIN, NON-NESTED
+Question: Which sales orders have special pricing agreements? --- Label:  JOIN, NON-NESTED
+Question: How many sales orders were placed by customers referred by a specific marketing campaign? --- Label:  JOIN, NON-NESTED
+Question: What is the average lead time between order confirmation and payment receipt? --- Label:  JOIN, NESTED
+Question: Which sales orders were generated from specific lead sources website contact form? --- Label:  NON-JOIN, NON-NESTED
+Question: How many sales orders were placed by customers in a particular industry or sector? --- Label:  JOIN, NON-NESTED
+Question: What is the distribution of sales orders by shipping method standard shipping? --- Label:  NON-JOIN, NON-NESTED
+Question: Which sales orders have custom pricing negotiated with individual customers? --- Label:  JOIN, NESTED
+Question: How many sales orders were placed by customers with a specific credit limit? --- Label:  JOIN, NON-NESTED
+Question: What is the average number of days it takes to convert a lead into a sales order? --- Label:  JOIN, NON-NESTED
+Question: Which sales orders have attachments specifications? --- Label:  NON-JOIN, NON-NESTED
+Question: How many sales orders were placed during promotional periods? --- Label:  JOIN, NON-NESTED
+Question: What is the distribution of sales orders by referral source nline advertisement? --- Label:  NON-JOIN, NON-NESTED
+Question: Which sales orders were created by a specific sales team member? --- Label:  JOIN, NON-NESTED
+Question: How many sales orders were placed by customers in a particular city or region? --- Label:  JOIN, NON-NESTED
+Question: What is the average time taken to fulfill an order from confirmation to delivery? --- Label:  NON-JOIN, NON-NESTED

@@ -10,7 +10,15 @@ from dotenv import load_dotenv
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain_openai import OpenAI
-from prompt import QUESTION_LABEL_MULTI
+from prompt import (
+    QUESTION_LABEL_MULTI,
+    EASY_FEW_SHOT,
+    JOIN_FEW_SHOT,
+    NESTED_FEW_SHOT,
+    get_easy_class_prompt,
+    get_join_class_prompt,
+    get_join_nested_class_prompt,
+)
 from openai import OpenAI
 from termcolor import colored
 import time
@@ -22,38 +30,58 @@ df = pd.read_csv(questions_path, header=None)
 
 questions: List[str] = df[0].tolist()
 
+
+def generate_sql_response(model, query: str, classification_hint: str, table_infos):
+    response = ""
+    if classification_hint and classification_hint == "NON-JOIN, NON-NESTED":
+        response = model.generate_response(
+            get_easy_class_prompt(table_infos, query, EASY_FEW_SHOT)
+        )
+    elif classification_hint and classification_hint == "JOIN, NON-NESTED":
+        response = model.generate_response(
+            get_join_class_prompt(table_infos, query, JOIN_FEW_SHOT)
+        )
+    else:
+        response = model.generate_response(
+            get_join_nested_class_prompt(table_infos, query, NESTED_FEW_SHOT)
+        )
+    return response
+
+
 if __name__ == "__main__":
     load_dotenv()
     llm = ChatOpenAI(model="gpt-3.5-turbo-1106", temperature=0)
     db = DataBase("postgresql://odoo:odoo@localhost:5432/db2")
+    model = Model("gpt-3.5-turbo-1106")
     text_to_sql = TextToSQL(llm, db)
     data_save = open("data.txt", "a")
+
+    model.setup()
+
     for prompt in questions:
-        # prompt: str = input("Enter Your Question")
-        # if prompt == "break":
-            # break
-        ## step 1 get the related tables for the question
-        # print(colored("Get tables related questions", 'green'))
+        print(colored("get related tables of the question: ", "green"))
         related_tables = text_to_sql.get_tables_related_question(prompt)
-        # print(related_tables)
-        ## step 2 get the database schema and the examples
-        # print(colored("Get Context", 'green'))
         context = db.get_context()
-        # print(colored("Get table names", 'green'))
         tables = db.get_tables_infos(context)
-        # print(colored("Get related tables schema", 'green'))
-        related_tables_schema:str = db.get_related_tables_schema(related_tables, tables)
-        # step 3 classify the answer
-        client = OpenAI()
-        user_input = "\ntable info:\n{table_info}\nQ: {query}\nA: ".format(table_info=related_tables, query=prompt)
-        completion = client.chat.completions.create(
-            model="gpt-3.5-turbo-1106",
-            messages=[{"role": "user", "content": QUESTION_LABEL_MULTI + user_input}],
-            stream=False,
+        related_tables_schema: str = db.get_related_tables_schema(
+            related_tables, tables
         )
-        response: str = completion.choices[0].message.content
+        user_input = "\ntable info:\n{table_info}\nQ: {query}\nA: ".format(
+            table_info=related_tables, query=prompt
+        )
+        print(colored("get classification of the question: ", "green"))
+        response: str = model.generate_response(QUESTION_LABEL_MULTI + user_input)
+        time.sleep(20)
+        print(colored("get the sql response: ", "green"))
+
         res = response.split("Label:")
         if len(res) == 2:
-            data_save.write(f"Question: {prompt} --- Label: {res[1]}\n")
-        time.sleep(40)
+            sql_response: str = generate_sql_response(
+                model,
+                prompt,
+                res[1],
+                related_tables,
+            )
+            data_save.write(f"Question: {prompt} --- sql_response: {sql_response}\n")
+        time.sleep(20)
         # print(f"Response: {response}")
